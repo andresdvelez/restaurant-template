@@ -495,6 +495,30 @@ body.nav-active {
   z-index: -1;
 }
 
+.w-100 {
+  width: 100%;
+}
+
+.move-anim {
+  animation: move 5s linear infinite;
+}
+
+@keyframes move {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+}
+
+.has-bg-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 /*-----------------------------------*\
   #PRELOAD
 \*-----------------------------------*/
@@ -511,6 +535,7 @@ body.nav-active {
   justify-items: center;
   z-index: 10;
   transition: var(--transition-2);
+  /* display: none; */
 }
 
 .preload > * {
@@ -966,21 +991,237 @@ body.nav-active {
   transition-delay: 300ms;
 }
 
+.service-card .card-banner {
+  transition: var(--transition-2);
+}
+
+.service-card:is(:hover, :focus-within) .card-banner {
+  transform: scale(1.05);
+}
+
+.service-card .card-title {
+  margin-block-end: 12px;
+}
+
 /*-----------------------------------*\
   #ABOUT
 \*-----------------------------------*/
+.about .section-text {
+  margin-block: 15px 30px;
+}
+
+.about .btn {
+  margin-inline: auto;
+  margin-block-start: 26px;
+}
+
+.about .container {
+  display: grid;
+  gap: 120px;
+}
+
+.about-banner {
+  position: relative;
+  margin-block-end: 120px;
+}
+
+.about-banner > .w-100 {
+  padding-inline-start: 50px;
+}
+
+.about .abs-img {
+  position: absolute;
+}
+
+.about .abs-img::before {
+  z-index: -1;
+}
+
+.about .abs-img-1 {
+  bottom: -120px;
+  left: 0;
+  width: 150px;
+  padding-block: 50px;
+}
+
+.about .abs-img-2 {
+  top: -65px;
+  right: 0;
+  overflow: hidden;
+}
+
+.about .abs-img-1::before {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  background-image: url("../images/img-pattern.svg");
+  background-repeat: repeat;
+}
+
+.about .abs-img-2::before {
+  inset: 0;
+  background-image: url("../images/badge-2-bg.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  animation: rotate360 15s linear infinite;
+}
 
 /*-----------------------------------*\
   #SPECIAL DISH
 \*-----------------------------------*/
+.special-dish-content {
+  padding-block: 70px;
+}
+
+.special-dish .abs-img {
+  margin-inline: auto;
+  margin-block-end: 12px;
+}
+
+.special-dish .section-text {
+  margin-block: 16px 40px;
+}
+
+.special-dish-content .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-block-end: 40px;
+}
+
+.special-dish-content .del {
+  text-decoration: none;
+  color: var(--davys-grey);
+}
+
+.special-dish-content .span {
+  color: var(--gold-crayola);
+}
+
+.special-dish .btn {
+  margin-inline: auto;
+}
 
 /*-----------------------------------*\
   #MENU
 \*-----------------------------------*/
+.menu .section-title {
+  margin-block-end: 40px;
+}
+
+.menu .grid-list {
+  margin-block-end: 50px;
+}
+
+.menu-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.hover\:card .card-banner {
+  background-color: var(--gold-crayola);
+}
+
+.hover\:card .card-banner .img-cover {
+  transition: var(--transition-2);
+}
+
+.hover\:card:is(:hover, :focus-within) .card-banner .img-cover {
+  opacity: 0.7;
+  transform: scale(1.05);
+}
+
+.menu-card .card-banner {
+  flex-shrink: 0;
+  border-radius: var(--radius-24);
+}
+
+.menu-card .card-title {
+  transition: var(--transition-1);
+}
+
+.menu-card .card-title:is(:hover, :focus-visible) {
+  color: var(--gold-crayola);
+}
+
+.menu-card .badge {
+  background-color: var(--gold-crayola);
+  color: var(--eerie-black-1);
+  font-family: var(--fontFamily-forum);
+  max-width: max-content;
+  line-height: var(--lineHeight-6);
+  text-transform: uppercase;
+  padding-inline: 10px;
+  margin-block-start: 10px;
+}
+
+.menu-card .span {
+  color: var(--gold-crayola);
+  margin-block: 10px;
+}
+
+.menu-card .card-text {
+  color: var(--quick-silver);
+  line-height: var(--lineHeight-4);
+}
+
+.menu-text .span {
+  display: inline-block;
+  color: var(--gold-crayola);
+}
+
+.menu .btn {
+  margin-inline: auto;
+  margin-block-start: 26px;
+}
+
+.menu .shape {
+  display: block;
+  width: 70%;
+}
+
+.menu .shape-2 {
+  top: 0;
+  left: 0;
+}
+
+.menu .shape-3 {
+  bottom: 0;
+  right: 0;
+}
 
 /*-----------------------------------*\
   #TESTIMONIALS
 \*-----------------------------------*/
+.testi {
+  padding-block-end: 340px;
+  position: static;
+}
+
+.testi .quote {
+  font-size: 7rem;
+  font-family: var(--fontFamily-forum);
+  line-height: 0.7em;
+}
+
+.testi .wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  margin-block: 40px 50px;
+}
+
+.testi .separator {
+  animation: rotate360 15s linear infinite;
+}
+
+.profile .img {
+  margin-inline: auto;
+}
 
 /*-----------------------------------*\
   #RESERVATION
