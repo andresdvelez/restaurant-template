@@ -1638,10 +1638,6 @@ textarea.input-field {
     transition: var(--transition-1);
   }
 
-  .topbar:has(~ .header.active) {
-    transform: translateY(-100%);
-  }
-
   .topbar-item:not(.link),
   .topbar .separator {
     display: none;
